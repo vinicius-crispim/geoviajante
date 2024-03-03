@@ -1,10 +1,10 @@
 import { HeaderStyled } from './Header';
-
+import Logo from '../../images/Logo.png'
 const Header = () => {
     return (
         <HeaderStyled>
             <div className="container container-space">
-                <h1>GeoViajante</h1>
+                <h1><img src={Logo} alt="Geo Viajante" /></h1>
                 <nav>
                     <button className="menu-button"
                     onClick={() =>{

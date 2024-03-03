@@ -1,15 +1,16 @@
 import ABApolloClient from './components/ABApolloClient';
-import Teste from './components/Teste';
-import Header from './components/Header';
 import EstilosGlobais from './style/GlobalStyle';
+import { BrowserRouter } from 'react-router-dom';
+import Rotas from './rotas';
 
 function App() {
   return (
     <ABApolloClient>
       <div className="App">
-      <EstilosGlobais/>
-        <Header/>
-        <Teste/>
+        <EstilosGlobais />
+        <BrowserRouter>
+          <Rotas />
+        </BrowserRouter>
       </div>
     </ABApolloClient>
   );
