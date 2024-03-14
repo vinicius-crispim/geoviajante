@@ -4,7 +4,6 @@ import { Colors } from "../../style/colors";
 export const FooterStyled = styled.footer`
     width: 100%;
     display: flex;
-    position: absolute;
     bottom: 0;
     justify-content: space-around;
     align-items: center;

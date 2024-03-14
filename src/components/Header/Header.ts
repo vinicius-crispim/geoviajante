@@ -68,7 +68,7 @@ export const HeaderStyled = styled.header`
         position: absolute;
         top: 100%;
         right: 0;
-        background: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
+        background: linear-gradient(97.54deg, rgba(156, 174, 7, 1) 35.49%, rgba(129, 53, 44, .6) 165.37%);
         flex-direction: column;
       }
 

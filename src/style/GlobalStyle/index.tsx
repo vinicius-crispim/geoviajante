@@ -17,6 +17,7 @@ html {
   }
   .container-space {
     max-width: 85%;
+    margin: 0 auto;
   }
   h1 {
     font-size: 2em;
@@ -149,6 +150,17 @@ html {
   }
   [hidden] {
     display: none;
+  }
+
+  @media (max-width: 640px) {
+    .container-space{
+      max-width: 90%;
+    }
+  }
+  @media (max-width: 340px) {
+    .container-space{
+      max-width: 93%;
+    }
   }
 `
 
