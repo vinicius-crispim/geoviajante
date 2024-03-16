@@ -1,45 +1,60 @@
-import { gql, useQuery } from "@apollo/client";
+import { useReactiveVar } from "@apollo/client";
 import { useState } from "react";
 import CountryCard from "../CountryCard";
 import * as S from './CountriesList';
-import { ICountry } from "../../interfaces/ICountry";
+import { ICountry } from '../../interfaces/ICountry';
+import { countriesVar } from "../../graphql/countries/state";
+import { useCountries } from "../../graphql/countries/hooks";
 
-const OBTEM_PAISES = gql`
-query countries{
-    countries{
-        name
-        code
-    }
-  }
-`
+
 
 const CountriesList = () => {
 
-    const { data } = useQuery(OBTEM_PAISES);
+    const [search, setSearch] = useState('');
+    const [seeNum, setSeeNum] = useState(9);
+    const countries = useReactiveVar(countriesVar)
 
-    const [textoBusca, setTextoBusca] = useState('');
-
-    console.log(data?.countries);
-    function handleOnChange(e: { target: { value: any; }; }) {
-        setTextoBusca(e.target.value);
-        console.log(textoBusca)
+    const handleOnChange = (e: { target: { value: any; }; }) => {
+        setSearch(e.target.value);
+        console.log(search)
     }
 
-    return (
-        <S.CountriesListStyled className="container-space ">
-            <form style={{ maxWidth: '80%', margin: '24px auto', textAlign: 'center' }}>
-                <input value={textoBusca} onChange={handleOnChange} placeholder='Digite o título' />
-            </form>
-            <ul>
+    useCountries();
+
+    console.log(countries)
+
+    if (countries.length < 8) {
+        return <p>Carregando...</p>
+    } else {
+
+        return (
+            <S.CountriesListStyled className="container-space ">
+                <form style={{ maxWidth: '80%', margin: '24px auto', textAlign: 'center' }}>
+                    <input value={search} onChange={handleOnChange} placeholder='Digite o título' />
+                </form>
+                <ul>
+                    {countries &&
+                        countries.map((country: ICountry, index: number) => {
+                            return index < seeNum ? <CountryCard key={country.code} country={country} /> : null
+                        })
+                    }
+                </ul>
                 {
-                    data?.countries.map((country: ICountry) => {
-                        return <CountryCard country={country} />
-                    })
+                    seeNum < countries.length &&
+                    <button onClick={() => {
+                        seeNum < countries.length && setSeeNum(seeNum + 9);
+                    }}>VER MAIS</button>
                 }
-            </ul>
-            {/* <CountryCard country={data?.country} /> */}
-        </S.CountriesListStyled>
-    )
+                {
+                    seeNum > 9 &&
+                    <button onClick={() => {
+                        setSeeNum(seeNum - 9);
+                    }}>VER MENOS</button>
+                }
+                {/* <CountryCard country={data?.country} /> */}
+            </S.CountriesListStyled >
+        )
+    }
 }
 
 export default CountriesList;

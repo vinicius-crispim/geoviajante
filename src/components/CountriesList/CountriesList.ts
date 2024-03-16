@@ -26,4 +26,8 @@ export const CountriesListStyled = styled.div`
         justify-content: space-around;
         gap: 64px;
     }
+
+    button{
+        margin: 24px;
+    }
 `

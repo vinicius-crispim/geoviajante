@@ -7,8 +7,6 @@ interface ICountryCardProps {
 }
 
 const CountryCard = ({ country }: ICountryCardProps) => {
-    console.log(country.code)
-
     return (
         <S.CountryCardStyle>
             <img

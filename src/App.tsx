@@ -6,12 +6,12 @@ import Rotas from './rotas';
 function App() {
   return (
     <ABApolloClient>
-      <div className="App">
-        <EstilosGlobais />
-        <BrowserRouter>
-          <Rotas />
-        </BrowserRouter>
-      </div>
+        <div className="App">
+          <EstilosGlobais />
+          <BrowserRouter>
+            <Rotas />
+          </BrowserRouter>
+        </div>
     </ABApolloClient>
   );
 }
