@@ -6,7 +6,6 @@ const Home = () => {
         <>
             <Banner titulo="GeoViajante" subtitulo="Descubra o Mundo em Cada Canto!"/>
             <CountriesList/>
-            {/* <Teste /> */}
         </>
     )
 }

@@ -5,6 +5,7 @@ import * as S from './CountriesList';
 import { ICountry } from '../../interfaces/ICountry';
 import { countriesVar } from "../../graphql/countries/state";
 import { useCountries } from "../../graphql/countries/hooks";
+import Loader from "../Loader";
 
 
 
@@ -24,7 +25,7 @@ const CountriesList = () => {
     console.log(countries)
 
     if (countries.length < 8) {
-        return <p>Carregando...</p>
+        return <Loader/>
     } else {
 
         return (
