@@ -15,7 +15,7 @@ export const CountryCardStyle = styled.li`
     h3{
         margin: 0;
         padding: 10px;
-        background-color: rgba(237, 231, 225, .7);
+        background-color: rgba(237, 231, 225, .9);
         right: 0;
         left: 0;
         font-weight: 400;
@@ -24,7 +24,7 @@ export const CountryCardStyle = styled.li`
         color: #000;
         font-size: 20px;
         transition: all 0.2s ease 0s;
-        bottom:-15px;
+        bottom:-10px;
         opacity:0;
     }
     
@@ -43,7 +43,7 @@ export const CountryCardStyle = styled.li`
     &:hover{
         cursor: pointer;
         h3{
-            bottom: 0;
+            bottom: -3px;
             opacity:1;
         }
     }

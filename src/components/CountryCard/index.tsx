@@ -11,9 +11,9 @@ const CountryCard = ({ country }: ICountryCardProps) => {
         <S.CountryCardStyle>
             <img
                 src={`https://flagcdn.com/h240/${country.code.toLowerCase()}.png`}
-                alt="Bandeira da Ucrânia"
+                alt={country.name} 
             />
-                <h3>{country.name}</h3>
+            <h3>{country.name}</h3>
         </S.CountryCardStyle>
     )
 }

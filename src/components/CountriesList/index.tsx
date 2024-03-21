@@ -6,6 +6,7 @@ import { ICountry } from '../../interfaces/ICountry';
 import { countriesVar } from "../../graphql/countries/state";
 import { useCountries } from "../../graphql/countries/hooks";
 import Loader from "../Loader";
+import Button from "../Button";
 
 
 
@@ -25,13 +26,13 @@ const CountriesList = () => {
     console.log(countries)
 
     if (countries.length < 8) {
-        return <Loader/>
+        return <Loader />
     } else {
 
         return (
             <S.CountriesListStyled className="container-space ">
                 <form style={{ maxWidth: '80%', margin: '24px auto', textAlign: 'center' }}>
-                    <input value={search} onChange={handleOnChange} placeholder='Digite o título' />
+                    <input value={search} onChange={handleOnChange} placeholder='Digite o nome do país' />
                 </form>
                 <ul>
                     {countries &&
@@ -40,19 +41,20 @@ const CountriesList = () => {
                         })
                     }
                 </ul>
-                {
-                    seeNum < countries.length &&
-                    <button onClick={() => {
-                        seeNum < countries.length && setSeeNum(seeNum + 9);
-                    }}>VER MAIS</button>
-                }
-                {
-                    seeNum > 9 &&
-                    <button onClick={() => {
-                        setSeeNum(seeNum - 9);
-                    }}>VER MENOS</button>
-                }
-                {/* <CountryCard country={data?.country} /> */}
+                <div className="buttons">
+                    {
+                        seeNum < countries.length &&
+                        <Button onClick={() => {
+                            seeNum < countries.length && setSeeNum(seeNum + 9);
+                        }}>VER MAIS</Button>
+                    }
+                    {
+                        seeNum > 9 &&
+                        <Button onClick={() => {
+                            setSeeNum(seeNum - 9);
+                        }}>VER MENOS</Button>
+                    }
+                </div>
             </S.CountriesListStyled >
         )
     }

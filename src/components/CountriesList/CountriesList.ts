@@ -27,7 +27,12 @@ export const CountriesListStyled = styled.div`
         gap: 64px;
     }
 
-    button{
-        margin: 24px;
+    .buttons{
+        display: flex;
+        justify-content: center;
+
+        button{
+            width: 160px;
+        }
     }
 `
