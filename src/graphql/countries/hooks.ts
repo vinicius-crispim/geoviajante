@@ -1,6 +1,6 @@
-import { useQuery } from "@apollo/client"
+import { useQuery, useReactiveVar } from "@apollo/client"
 import { GET_COUNTRIES } from "./queries"
-import { countriesVar } from "./state"
+import { countriesVar, filtroVar } from "./state"
 
 const shuffle = (array: any) => {
     const newArray = [...array];
@@ -16,11 +16,14 @@ const shuffle = (array: any) => {
     return newArray;
 }
 export const useCountries = () => {
+    const filtro = useReactiveVar(filtroVar);
     return (
         useQuery(GET_COUNTRIES, {
+            variables:{
+                name:filtro
+            },
             onCompleted(data) {
-                if (data?.countries) {
-                    // console.log(data.countries)
+                if (data?.countries) {        
                     const shuffleCountries = shuffle(data.countries);
                     countriesVar(shuffleCountries);
                 }

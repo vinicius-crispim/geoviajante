@@ -18,7 +18,7 @@ const Header = () => {
                     <ul className="menu" id='menu'>
                         <li><a href="#countries">Paises</a></li>
                         <li><a href="#continents">Continentes</a></li>
-                        <li><a href="#continents">Jogo</a></li>
+                        <li><a href="#continents">Minigame</a></li>
                     </ul>
                 </nav>
             </div>
