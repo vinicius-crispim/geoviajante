@@ -8,8 +8,6 @@ import { useCountries } from "../../graphql/countries/hooks";
 import Loader from "../Loader";
 import Button from "../Button";
 
-
-
 const CountriesList = () => {
 
     const [seeNum, setSeeNum] = useState(9);
@@ -28,8 +26,8 @@ const CountriesList = () => {
     return (
         <>
             <S.CountriesListStyled className="container-space ">
-                <form style={{ maxWidth: '80%', margin: '24px auto', textAlign: 'center' }}>
-                    <input onChange={handleOnChange} placeholder='Digite o nome do país em inglês' />
+                <form>
+                    <input onChange={handleOnChange} placeholder='Digite o nome do país' />
                 </form>
                 <ul>
                     {countries &&

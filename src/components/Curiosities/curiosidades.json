@@ -1,0 +1,89 @@
+{
+  "curiosidades_paises": [
+    {
+      "portugues": "Butão",
+      "ingles": "Bhutan",
+      "curiosidade": "Mede o progresso nacional pelo conceito de Felicidade Interna Bruta (FIB)."
+    },
+    {
+      "portugues": "Liechtenstein",
+      "ingles": "Liechtenstein",
+      "curiosidade": "É um dos únicos dois países duplamente sem litoral do mundo."
+    },
+    {
+      "portugues": "Tuvalu",
+      "ingles": "Tuvalu",
+      "curiosidade": "É um dos países mais ameaçados pela mudança climática devido à sua baixa altitude."
+    },
+    {
+      "portugues": "Vaticano",
+      "ingles": "Vatican",
+      "curiosidade": "É o menor país do mundo em área e população, sendo o centro da Igreja Católica Romana."
+    },
+    {
+      "portugues": "Nauru",
+      "ingles": "Nauru",
+      "curiosidade": "É o menor país insular do mundo e enfrenta desafios econômicos devido à exaustão de seus recursos naturais."
+    },
+    {
+      "portugues": "Suíça",
+      "ingles": "Switzerland",
+      "curiosidade": "Famosa por sua neutralidade política e abriga importantes organizações internacionais."
+    },
+    {
+      "portugues": "Islândia",
+      "ingles": "Iceland",
+      "curiosidade": "É o país mais pacífico do mundo e uma grande parte da população acredita em elfos e outras criaturas míticas."
+    },
+    {
+      "portugues": "Canadá",
+      "ingles": "Canada",
+      "curiosidade": "Possui a maior linha costeira do mundo e mais lagos do que qualquer outro país."
+    },
+    {
+      "portugues": "Austrália",
+      "ingles": "Australia",
+      "curiosidade": "Ocupa um continente inteiro e é conhecida por sua fauna única."
+    },
+    {
+      "portugues": "Brasil",
+      "ingles": "Brazil",
+      "curiosidade": "Possui a maior floresta tropical do mundo e a maior população de falantes de português."
+    },
+    {
+      "portugues": "Mônaco",
+      "ingles": "Monaco",
+      "curiosidade": "É o segundo menor país do mundo, mas é famoso por sua riqueza e glamour."
+    },
+    {
+      "portugues": "Nova Zelândia",
+      "ingles": "New Zealand",
+      "curiosidade": "Foi o primeiro país a conceder o direito de voto às mulheres e é conhecida por sua paisagem deslumbrante."
+    },
+    {
+      "portugues": "Japão",
+      "ingles": "Japan",
+      "curiosidade": "Conhecido por sua cultura única, incluindo cerimônias de chá e uma rica tradição de anime e mangá."
+    },
+    {
+      "portugues": "Finlândia",
+      "ingles": "Finland",
+      "curiosidade": "Conhecida por seu sistema educacional de alta qualidade e igualdade de oportunidades."
+    },
+    {
+      "portugues": "Grécia",
+      "ingles": "Greece",
+      "curiosidade": "Considerada o berço da democracia ocidental e possui uma rica história cultural."
+    },
+    {
+      "portugues": "Israel",
+      "ingles": "Israel",
+      "curiosidade": "É um dos países mais religiosamente diversificados do mundo, abrigando locais sagrados para várias religiões."
+    },
+    {
+      "portugues": "Índia",
+      "ingles": "India",
+      "curiosidade": "É o segundo país mais populoso do mundo e possui uma diversidade cultural, linguística e religiosa."
+    }
+  ]
+}

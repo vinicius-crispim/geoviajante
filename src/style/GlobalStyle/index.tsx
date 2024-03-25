@@ -23,6 +23,9 @@ html {
     font-size: 2em;
     margin: 0.67em 0;
   }
+  ul{
+    padding: 0;
+  }
   hr {
     box-sizing: content-box; 
     height: 0; 

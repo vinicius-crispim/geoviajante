@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const CountryCardStyle = styled.li`
-    width: 270px;
+    width: 280px;
     height: 210px;
     position: relative;
     list-style: none;
