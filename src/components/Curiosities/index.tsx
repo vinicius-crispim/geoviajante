@@ -1,43 +1,46 @@
+import { useEffect, useState } from 'react'
 import Button from '../Button'
 import Card from './Card'
 import * as S from './Curiosities'
 import curiosities from './curiosidades.json'
 const Curiosities = () => {
+    const [contador, setContador] = useState(3);
+
+    const [randomCuriosities, setRandomCuriosities] = useState<{ portugues: string; ingles: string; curiosidade: string }[]>();
 
     const getThreeUniqueRandomItems = () => {
         const result: { portugues: string; ingles: string; curiosidade: string }[] = [];
+        
+        setContador(contador + 3);
 
-        for (let i = 0; i < 3; i++) {
-            const randomIndex = Math.floor(Math.random() * curiosities.curiosidades_paises.length);
-            let item;
-            if (result.length > 0) {
-                do {
-                    item = curiosities.curiosidades_paises[randomIndex];
-                } while (result.includes(item));
-            } else {
-                item = curiosities.curiosidades_paises[randomIndex];
-            }
-            result.push(item);
+        contador === curiosities.curiosidades_paises.length && setContador(3);
+
+        for (let i = contador - 3; i < contador; i++){
+            result.push(curiosities.curiosidades_paises[i]);
         }
 
-        return result;
+        setRandomCuriosities(result);
     }
 
-
-    const randomCuriosities = getThreeUniqueRandomItems()
+    useEffect(() => {
+        getThreeUniqueRandomItems();
+        setContador(contador + 3);
+    }, [])
     return (
         <S.CuriositiesStyled>
             <ul>
                 {
-                    randomCuriosities.map(data => {
-                        console.log(randomCuriosities)
+                    randomCuriosities?.map(data => {
                         return (
-                            <Card data={data} />
+                            <Card key={data.portugues} data={data} />
                         )
                     })
                 }
             </ul>
-            <Button onClick={() => { }}>Ver Outras</Button>
+            <Button onClick={() => { 
+                
+                getThreeUniqueRandomItems()
+            }}>Ver Outras</Button>
         </S.CuriositiesStyled>
     )
 }
