@@ -8,7 +8,7 @@ export const FooterStyled = styled.footer`
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    padding: 0 0 16px 0;
+    padding: 0 0 6px 0;
     flex-wrap: wrap;
 
     h3{

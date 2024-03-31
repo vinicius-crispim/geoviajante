@@ -5,13 +5,21 @@ import { Colors } from "../../style/colors";
 export const CountriesListStyled = styled.div`
 
     form{
-        margin:24px auto;
+        margin:32px auto;
         text-align: center;
+
+        p{
+            color: rgba(149, 165, 166, 1);
+            margin: 0 auto 24px;
+            max-width: 420px;
+            min-width: 180px;
+            text-align: start;
+        }
     }
 
     input{
         max-width: 420px;
-        margin: 12px auto;
+        margin: 12px auto 8px;
         width: 100%;
         min-width: 180px;
         background-color:rgba(180, 180, 180, .15);

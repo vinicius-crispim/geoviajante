@@ -28,6 +28,7 @@ const CountriesList = () => {
             <S.CountriesListStyled className="container-space ">
                 <form>
                     <input onChange={handleOnChange} placeholder='Digite o nome do país' />
+                    <p>* Informe o nome em inglês</p>
                 </form>
                 <ul>
                     {countries &&
