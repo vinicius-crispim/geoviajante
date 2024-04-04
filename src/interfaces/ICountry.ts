@@ -5,7 +5,8 @@ export interface ICountry {
   code: string,
   continent: {
     name: string,
-    code: string
+    code: string,
+    countries: ICountry[]
   },
   currencies: [
     string

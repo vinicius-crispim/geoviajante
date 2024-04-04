@@ -3,11 +3,13 @@ import BarraNavegacao from "../../components/Header"
 import Rodape from "../../components/Footer"
 
 const PaginaBase = () => {
-    return (<main>
+    return (<>
         <BarraNavegacao />
-        <Outlet />
+        <main>
+            <Outlet />
+        </main>
         <Rodape />
-    </main>)
+    </>)
 }
 
 export default PaginaBase

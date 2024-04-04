@@ -9,7 +9,6 @@ const Footer = () => {
                 <img src={Logo} alt="DevFit" />
             </div>
             <div>
-                <h3>Mais sobre mim!</h3>
                 <S.SocialMediaStyled>
                     <FaInstagram className="icone" />
                     <FaGithub className="icone" />

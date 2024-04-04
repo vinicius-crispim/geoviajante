@@ -26,6 +26,7 @@ interface CountryProp {
 }
 
 const CountryInfo = ({ country, code }: CountryProp) => {
+    console.log(country.continent.countries[1].name)
     return (
         <S.CountryInfoStyled>
             <S.InfosLatStyled>
@@ -35,33 +36,71 @@ const CountryInfo = ({ country, code }: CountryProp) => {
                 />
                 <div>
                     <h4>Nome do país: {country.name}</h4>
-                    <p>Continente: {country.continent.name}</p>
-                    <p>Capital: {country.capital}</p>
-                    <ul className='lista'>Moeda(s):
+                    <p><strong>Continente:</strong> {country.continent.name}</p>
+                    <p><strong>Capital:</strong> {country.capital}</p>
+                    <ul className='lista'><strong>Moeda(s):</strong>
                         {country.currencies.map((currency, index) => (
-                            <li key={index}>{currency}</li>
+                            index + 1 === country.currencies.length ?
+                                <li key={index}>{currency}</li>
+                                :
+                                <li key={index}>{currency}, </li>
                         ))}
                     </ul>
-                    <ul className='lista'>Idioma(s):
+                    <ul className='lista'><strong>Idioma(s):</strong>
                         {country.languages.map((language, index) => (
-                            <li key={index}>{language.name}</li>
+                            index + 1 === country.languages.length ?
+                                <li key={index}>{language.name}</li>
+                                :
+                                <li key={index}>{language.name}, </li>
+
                         ))}
                     </ul>
-                    <p>Código de país: +{country.phone}</p>
+                    <p><strong>Código de país:</strong> +{country.phone}</p>
                     <div className='mobile'>
                         {
                             country.subdivisions.length > 0 &&
-                            <ul>Subdivisões:
+                            <ul className='lista'><strong>Subdivisões:</strong>
                                 {country.subdivisions.map((sub, index) => (
-                                    <li key={index}>{sub.name}</li>
+                                    index + 1 === country.subdivisions.length ?
+                                        <li key={index}>
+                                            {sub.name}
+                                        </li> :
+                                        <li key={index}>
+                                            {sub.name},
+                                        </li>
                                 ))}
                             </ul>
                         }
                         {
                             country.states.length > 0 &&
-                            <ul>Estados:
+                            <ul><strong>Estados:</strong>
                                 {country.states.map((state, index) => (
-                                    <li key={index}>{state.name}</li>
+                                    index + 1 === country.states.length ?
+                                        <li key={index}>
+                                            {state.name}
+                                        </li>
+                                        :
+                                        <li key={index}>
+                                            {state.name},
+                                        </li>
+                                ))}
+                            </ul>
+                        }
+                        {
+                            country.continent.countries.length > 0 &&
+                            <ul>
+                                <strong>
+                                    Países do mesmo continente:
+                                </strong>
+                                {country.continent.countries.map((countryCont, index) => (
+                                    index + 1 === country.continent.countries.length ?
+                                        <li key={index}>
+                                            {countryCont.name}
+                                        </li>
+                                        :
+                                        <li key={index}>
+                                            {countryCont.name},
+                                        </li>
                                 ))}
                             </ul>
                         }
@@ -71,17 +110,41 @@ const CountryInfo = ({ country, code }: CountryProp) => {
             <div className='desktop'>
                 {
                     country.subdivisions.length > 0 &&
-                    <ul>Subdivisões:
+                    <ul><strong>Subdivisões:</strong>
                         {country.subdivisions.map((sub, index) => (
-                            <li key={index}>{sub.name}</li>
+                            index + 1 === country.subdivisions.length ?
+                                <li key={index}>{sub.name}</li>
+                                :
+                                <li key={index}>{sub.name}, </li>
                         ))}
                     </ul>
                 }
                 {
                     country.states.length > 0 &&
-                    <ul>Estados:
+                    <ul><strong>Estados:</strong>
                         {country.states.map((state, index) => (
-                            <li key={index}>{state.name}</li>
+                            index + 1 === country.states.length ?
+                                <li key={index}>{state.name}</li>
+                                :
+                                <li key={index}>{state.name}, </li>
+                        ))}
+                    </ul>
+                }
+                {
+                    country.continent.countries.length > 0 &&
+                    <ul>
+                        <strong>
+                            Países do mesmo continente:
+                        </strong>
+                        {country.continent.countries.map((countryCont, index) => (
+                            index + 1 === country.continent.countries.length ?
+                                <li key={index}>
+                                    {countryCont.name}
+                                </li>
+                                :
+                                <li key={index}>
+                                    {countryCont.name},
+                                </li>
                         ))}
                     </ul>
                 }

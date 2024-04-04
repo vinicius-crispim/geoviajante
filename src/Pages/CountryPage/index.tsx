@@ -10,6 +10,9 @@ query countries($code: ID!){
       name
       continent{
         name
+        countries {
+          name
+        }
       }
       capital
       currencies

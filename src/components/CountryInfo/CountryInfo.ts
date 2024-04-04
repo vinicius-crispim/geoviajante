@@ -2,14 +2,18 @@ import styled from "styled-components";
 
 export const CountryInfoStyled = styled.section`
     display: flex;
-    margin: 48px auto;
+    margin: 32px auto;
     align-items: center;
     width: 90%;
     flex-direction: column;
     justify-content: center;
-    
     h4, p, ul{
             margin: 10px 0;
+            font-size: 18px;
+        }
+        
+    h4{
+        font-size: 20px;
     }
 
     .mobile{
@@ -20,18 +24,22 @@ export const CountryInfoStyled = styled.section`
         list-style: none;
         
         li{
-            display: inline;
-            margin: 12px;
-            line-height: 2;
+            display: inline-block;
+            margin: 6px 8px;
+            line-height: 1;
         }
     }
     
-    .desktop{
-        display: block;
-        width: 100%;
-        text-align:center;
+    .vizinhos, .desktop{
+        display: flex;
+        align-items: start;
+        width:70%;
+        flex-direction: column;
+        max-width: 800px;
+        text-align:start;
+        margin-top: 12px;
         ul{
-            margin: 24px 0;
+            margin: 12px 0;
         }
     }
 
@@ -50,8 +58,24 @@ export const CountryInfoStyled = styled.section`
         .desktop{
             display: none;
         }
+        .vizinhos{
+            width: 100%;
+            text-align:start;
+            ul{
+                width:80%;
+                margin: 0 auto;
+            }
+            li{
+                margin: 0 4px;
+                line-height: 1.5;
+            }
+        }
     }
-`
+    
+    @media (max-width: 520px) {
+        margin: 24px auto;
+    }
+    `
 
 export const InfosLatStyled = styled.div`
     display: flex;
@@ -59,16 +83,15 @@ export const InfosLatStyled = styled.div`
     gap:40px;
     align-items: center;
     justify-content: center;
-
+    
     div{
         display: flex;
         flex-direction: column;
         height: 100%; 
-        width:40%;   
     }
-
+    
     img {
-        max-width:50%;   
+        max-width:55%;   
         height:310px;
         border:1px solid rgba(0,0,0,0.71);
         -webkit-box-shadow: 4px 2px 10px 1px rgba(0,0,0,0.71);
@@ -76,23 +99,42 @@ export const InfosLatStyled = styled.div`
         box-shadow: 4px 2px 10px 1px rgba(0,0,0,0.71);
         border-radius: 10px;
     }
-
+    
     @media (max-width: 860px) {
         flex-direction:column;
         text-align: center;
         gap: 12px;
-
+        img {
+            max-width:100%;
+            height: 260px;
+        }
         div{
-            width:80%; 
+            width:60%; 
             margin: 8px 0;
-            align-items: start;
+            text-align: start;
         }
         .mobile{
-            display: block;
+            display: flex;
             width: 100%;
-            margin: 0 auto;
             text-align:start;
+            flex-direction: column;
+
+            li{
+                margin: 0 4px;
+                line-height: 1.5;
+            }
         }
     }
-
-`
+    
+    @media (max-width: 460px) {
+        img{
+            max-width:100%;
+            width: 100%;
+            height: 230px;
+        }
+        div{
+            width:100%;
+        }
+    }
+    
+    `

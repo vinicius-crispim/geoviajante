@@ -13,7 +13,9 @@ html {
     font-family: "Poppins", sans-serif;
   }
   main {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
   .container-space {
     max-width: 85%;

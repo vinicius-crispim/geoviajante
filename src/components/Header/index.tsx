@@ -16,9 +16,9 @@ const Header = () => {
                         <div className='menu-icon'></div>
                     </button>
                     <ul className="menu" id='menu'>
-                        <li><a href="#countries">Paises</a></li>
                         <li><a href="#continents">Continentes</a></li>
-                        <li><a href="#continents">Minigame</a></li>
+                        <li><a href="#minigame">Minigame</a></li>
+                        <li><a href="#about">Sobre</a></li>
                     </ul>
                 </nav>
             </div>
