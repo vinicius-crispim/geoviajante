@@ -5,6 +5,37 @@ import { useState } from 'react';
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
+    const continents = [
+        {
+            name: 'África',
+            slug: 'AF',
+        },
+        {
+            name:'Antártica',
+            slug:'AN'
+        },
+        {
+            name:'Ásia',
+            slug:'AS'
+        },
+        {
+            name:'Europa',
+            slug:'EU'
+        },
+        {
+            name:'Oceania',
+            slug:'OC'
+        },
+        {
+            name:'América do Norte',
+            slug:'NA'
+        },
+        {
+            name:'América do Sul',
+            slug:'SA'
+        }
+    ]
+
     const handleDropDown = () => {
         setIsOpen(!isOpen);
     };
@@ -28,11 +59,10 @@ const Header = () => {
                         <div className='menu-icon'></div>
                     </button>
                     <ul className="menu" id='menu'>
-                        {window.innerWidth < 600 && <>aaaaaaaa</>}
                         {/* <li className="menu-item"><Link to={'continents'}>Continentes</Link></li> */}
-                        <li className="menu-item dropdown" onClick={handleDropDown} 
-                        onMouseLeave={closeDropdown}>
-                                <Dropdown isOpenProp={isOpen} title='Continentes'/>
+                        <li className="menu-item dropdown" onClick={handleDropDown}
+                            onMouseLeave={closeDropdown}>
+                            <Dropdown isOpenProp={isOpen} title='Continentes' options={continents} />
                         </li>
                         <li className="menu-item"><a href="#minigame">Minigame</a></li>
                         <li className="menu-item"><a href="#about">Sobre</a></li>

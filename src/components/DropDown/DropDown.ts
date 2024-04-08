@@ -29,8 +29,14 @@ export const DropdownList = styled.ul`
   gap: 0;
 
   @media (max-width: 640px) {
-    left: 145px;
-    top: -16px;
+    left: 140px;
+    top: -10px;
+  }
+
+  @media (max-width: 330px) {
+    left: 130px;
+    top: -10px;
+    width: 110px;
   }
 `;
 
@@ -44,6 +50,11 @@ export const DropdownItem = styled.li`
 
   @media (max-width: 640px) {
     background-color: #f0f0f0;
+  }
+
+  @media (max-width: 330px) {
+    padding: 10px 8px;
+    font-size: 12px;
   }
 `;
 

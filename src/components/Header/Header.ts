@@ -94,7 +94,7 @@ export const HeaderStyled = styled.header`
       
       .menu-item {
         margin: 0;
-        padding: 16px 24px;
+        padding: 12px 20px;
         background-color: #f0f0f0;
       }
       a {
@@ -121,6 +121,16 @@ export const HeaderStyled = styled.header`
           color: #000;
         }
       }
+    }
+  }
+
+  @media (max-width: 330px) {
+    nav .menu-item {
+        padding: 10px 12px;
+    }
+
+    nav li {
+      font-size:14px;
     }
   }
 `
