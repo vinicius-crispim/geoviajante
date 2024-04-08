@@ -21,23 +21,24 @@ export const HeaderStyled = styled.header`
   nav {
     position: relative;
     
-    ul {
+    .menu {
       list-style-type: none;
       padding: 0;
       margin: 0;
       display: flex;
+      align-items: center;
       gap: 16px;
       font-size:16px;
     }
     
-    li {
-      padding: 10px 8px;
+    .menu-item {
+      padding: 12px 10px;
       box-sizing: border-box;
       border: 1px solid transparent;
       border-radius: 8px;
       cursor: pointer;
     }
-    
+
     a {
       color: black;
       text-decoration: none;
@@ -48,50 +49,63 @@ export const HeaderStyled = styled.header`
       display: none;
     }
   }
-
+  
   li:hover {
     border-color: #545863;
     a{
       color: #545863;
     }
   }
-  
+
   @media (max-width: 640px) {
+
+    padding: 10px 0;
+
     .container{
       max-width: 90%;
+      flex-direction: row-reverse;
     }
-    nav {
 
-      ul {
+    h1 img{
+      position: relative;
+      top: 5px;
+      height: 38px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav {
+      .menu {
         display: none;
         gap:0;
         position: absolute;
-        top: 100%;
-        right: 0;
-        background: linear-gradient(97.54deg, rgba(156, 174, 7, 1) 35.49%, rgba(129, 53, 44, .6) 165.37%);
+        top: 101%;
+        left: 0;
+        background: #FFF;
         flex-direction: column;
       }
 
       .menu-icon {
-        width: 35px;
-        height: 4px;
+        width: 30px;
+        height: 2px;
         background-color: #FFF;
         margin: 6px 0;
       }
       
-      li {
+      .menu-item {
         margin: 0;
         padding: 16px 24px;
+        background-color: #f0f0f0;
       }
       a {
-        color: #fff;
+        color: #000;
       }
 
       .menu-button {
         display: block;
-        background: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
+        background: linear-gradient(97.54deg, #FFB347 35.49%, #FF4500 165.37%);
         color: #fff;
-        padding: 10px;
+        padding: 4px 10px;
         margin-right: 0;
         border: none;
         cursor: pointer;
@@ -104,7 +118,7 @@ export const HeaderStyled = styled.header`
       li:hover {
         border-color: none;
         a{
-          color: #FFF;
+          color: #000;
         }
       }
     }
