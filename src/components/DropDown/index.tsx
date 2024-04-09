@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import * as S from './DropDown'
+import { Link } from 'react-router-dom';
 
 interface DropDownProps {
   isOpenProp: boolean
@@ -17,7 +18,6 @@ const Dropdown = ({ isOpenProp, title, options }: DropDownProps) => {
     setIsOpen(isOpenProp)
   }, [isOpenProp])
 
-  console.log(isOpen)
   const handleItemClick = () => {
     // handle item click logic here
     setIsOpen(false);
@@ -29,10 +29,14 @@ const Dropdown = ({ isOpenProp, title, options }: DropDownProps) => {
       {isOpen && (
         <S.DropdownList>
           {options.map((option, index) => {
-              return (
-                <S.DropdownItem key={index} onClick={handleItemClick}>{option.name}</S.DropdownItem>
-              )
-            })
+            return (
+              <S.DropdownItem key={index} onClick={handleItemClick}>
+                <Link to={'continentes/' + option.slug}>
+                  {option.name}
+                </Link>
+              </S.DropdownItem>
+            )
+          })
           }
         </S.DropdownList>
       )}

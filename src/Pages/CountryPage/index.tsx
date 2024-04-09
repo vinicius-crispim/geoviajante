@@ -1,55 +1,32 @@
 import { useParams } from "react-router-dom"
 import Title from "../../components/Title";
-import { gql, useQuery } from "@apollo/client";
+import { useReactiveVar } from "@apollo/client";
 import Loader from "../../components/Loader";
 import CountryInfo from "../../components/CountryInfo";
-
-const getCountry = gql`
-query countries($code: ID!){
-    country(code: $code) {
-      name
-      continent{
-        name
-        countries {
-          name
-        }
-      }
-      capital
-      currencies
-      languages{
-        name
-      }
-      phone
-      states{
-        name
-      }
-      subdivisions{
-        name
-      }
-    }
-}
-`
-
+import { countryVar } from "../../graphql/countries/state";
+import { useCountryByCode } from '../../graphql/countries/hooks';
 
 const CountryPage = () => {
   const params = useParams()
-  const { data } = useQuery(getCountry, {
-    variables: { code: params?.code },
-  })
-  console.log(params);
+
+  const country = useReactiveVar(countryVar)
+
+
+  useCountryByCode(params.code!)
+
   return (
     <>
       {
-        !data &&
+        !country &&
         <Loader />
       }
       {
-        data &&
+        country &&
         <section>
           <Title>
-            Pais: {data?.country.name}
+            Pais: {country?.name}
           </Title>
-          <CountryInfo country={data?.country} code={params?.code}/>
+          <CountryInfo country={country} code={params?.code}/>
         </section>
       }
     </>

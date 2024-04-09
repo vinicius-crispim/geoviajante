@@ -1,0 +1,101 @@
+[33mcommit da98ba677467dfc514613020d106b1bb28e9dd4d[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Vinicius Crispim <vinicrispim02@hotmail.com>
+Date:   Mon Apr 8 16:18:29 2024 -0300
+
+    Melhorando responsividade do dropdown e colocando os continentes com slug
+
+[33mcommit f1f6a6b51346e55f1d10474b35c10888aa4ecd4b[m
+Author: Vinicius Crispim <vinicrispim02@hotmail.com>
+Date:   Mon Apr 8 15:44:12 2024 -0300
+
+    Adicionando dropdown dos continentes
+
+[33mcommit aed49c1ee870044d2fa393f5b366cd48c0a4140b[m
+Author: Vinicius Crispim <vinicrispim02@hotmail.com>
+Date:   Thu Apr 4 16:34:49 2024 -0300
+
+    Pagina detalhes do país finalizada
+
+[33mcommit 580817d9afb2834599d3bf34a732dc70cc23a7f4[m
+Author: Vinicius Crispim <vinicrispim02@hotmail.com>
+Date:   Sun Mar 31 02:31:16 2024 -0300
+
+    Pagina país, faltando deixar responsivo
+
+[33mcommit 3fffc365411cfd8e75c4f1fb4b7f01adb3c7dfd1[m
+Author: Vinicius Crispim <vinicrispim02@hotmail.com>
+Date:   Thu Mar 28 16:32:03 2024 -0300
+
+    Botão de alterar curisidades
+
+[33mcommit afccb05c0342be35a11ebf430aadbd94978074ea[m
+Author: Vinicius Crispim <vinicrispim02@hotmail.com>
+Date:   Mon Mar 25 12:42:00 2024 -0300
+
+    Adicionando curiosidades
+
+[33mcommit 926c2c4e0e1dea51a1d6a0a400de1b8009a90e60[m
+Author: Vinicius Crispim <vinicrispim02@hotmail.com>
+Date:   Thu Mar 21 16:21:24 2024 -0300
+
+    Buscando país por nome
+
+[33mcommit 4184553578750c5619750b4b7d3156af189d4bbe[m
+Author: Vinicius Crispim <vinicrispim02@hotmail.com>
+Date:   Thu Mar 21 14:41:04 2024 -0300
+
+    Componente Botão
+
+[33mcommit 2f94e347832918d7325b961eadc9892aa18422ae[m
+Author: Vinicius Crispim <vinicrispim02@hotmail.com>
+Date:   Tue Mar 19 16:02:56 2024 -0300
+
+    Loader
+
+[33mcommit 7cd715b329998c3b41ef01f941aef6c49d5eedbb[m
+Author: Vinicius Crispim <vinicrispim02@hotmail.com>
+Date:   Sat Mar 16 01:13:22 2024 -0300
+
+    Lista embaralhada, encapsulando useQuery do Apollo em um hook customizado
+
+[33mcommit 4d72e928752db2b9fa3231f22cd1bf4d9db81bba[m
+Author: Vinicius Crispim <vinicrispim02@hotmail.com>
+Date:   Thu Mar 14 19:05:41 2024 -0300
+
+    Criando lista de países
+
+[33mcommit 342c1f3ea7fe00e2b73f3e6497233cdc5fb06433[m
+Author: Vinicius Crispim <vinicrispim02@hotmail.com>
+Date:   Tue Mar 12 17:00:28 2024 -0300
+
+    Banner
+
+[33mcommit 2b6b5c5a3b02d7cd7725b677ab222a961134ac41[m
+Author: Vinicius Crispim <vinicrispim02@hotmail.com>
+Date:   Sun Mar 3 00:39:22 2024 -0300
+
+    Pagina base
+
+[33mcommit 6536f885113c902bea2669d60afc26576d2a419e[m
+Author: Vinicius Crispim <vinicrispim02@hotmail.com>
+Date:   Fri Mar 1 00:18:14 2024 -0300
+
+    Header finalizado
+
+[33mcommit 7d2ae1071bbb4d244da432caa592d17fa9b1af4a[m
+Author: Vinicius Crispim <vinicrispim02@hotmail.com>
+Date:   Thu Feb 29 13:53:36 2024 -0300
+
+    Readme atualizado
+
+[33mcommit fb0ff74550658c82ade7535a6ea35f5cd8a7a614[m
+Author: Vinicius Crispim <vinicrispim02@hotmail.com>
+Date:   Thu Feb 29 13:39:22 2024 -0300
+
+    Primeiro commit, testes
+
+[33mcommit 24107d3c61070b5529173eb46891e5963f0c69cf[m
+Author: Vinicius Crispim <vinicrispim02@hotmail.com>
+Date:   Wed Feb 28 21:42:55 2024 -0300
+
+    Initialize project using Create React App

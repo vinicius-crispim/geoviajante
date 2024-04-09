@@ -43,7 +43,6 @@ const Header = () => {
     const closeDropdown = () => {
         setIsOpen(false);
     };
-    console.log(window.innerWidth)
     return (
         <HeaderStyled>
             <div className="container container-space">
@@ -59,7 +58,6 @@ const Header = () => {
                         <div className='menu-icon'></div>
                     </button>
                     <ul className="menu" id='menu'>
-                        {/* <li className="menu-item"><Link to={'continents'}>Continentes</Link></li> */}
                         <li className="menu-item dropdown" onClick={handleDropDown}
                             onMouseLeave={closeDropdown}>
                             <Dropdown isOpenProp={isOpen} title='Continentes' options={continents} />

@@ -8,3 +8,29 @@ query countries($name: String){
   }
 }
 `
+
+export const GET_COUNTRY_BY_CODE = gql`
+query countries($code: ID!){
+    country(code: $code) {
+      name
+      continent{
+        name
+        countries {
+          name
+        }
+      }
+      capital
+      currencies
+      languages{
+        name
+      }
+      phone
+      states{
+        name
+      }
+      subdivisions{
+        name
+      }
+    }
+}
+`
