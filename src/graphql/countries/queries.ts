@@ -34,3 +34,12 @@ query countries($code: ID!){
     }
 }
 `
+
+export const GET_COUNTRIES_BY_CONTINENT = gql`
+query countriesByContinent($continent: String, $name: String){
+  countries(filter:{continent:{eq:$continent}, name:{regex:$name}}) {
+    code
+    name
+  }
+}
+`

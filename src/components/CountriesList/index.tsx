@@ -1,4 +1,4 @@
-import { useReactiveVar } from "@apollo/client";
+import { ReactiveVar, useReactiveVar } from "@apollo/client";
 import { useState } from "react";
 import CountryCard from "../CountryCard";
 import * as S from './CountriesList';
@@ -8,20 +8,23 @@ import { useCountries } from "../../graphql/countries/hooks";
 import Loader from "../Loader";
 import Button from "../Button";
 
-const CountriesList = () => {
+interface CountriesListProps {
+    countries: ICountry[]
+    makeVar: ReactiveVar<string>
+}
+
+const CountriesList = ({ countries, makeVar } : CountriesListProps) => {
 
     const [seeNum, setSeeNum] = useState(9);
-    const countries = useReactiveVar(countriesVar)
     const [loaderMsg, setLoaderMsg] = useState("Carregando países")
 
     const handleOnChange = (e: { target: { value: any; }; }) => {
-        console.log(filtroVar());
-        filtroVar(e.target.value);
+        console.log(makeVar());
+        makeVar(e.target.value);
         countries && setLoaderMsg('Nenhum país encontrado');
         console.log(loaderMsg)
     }
 
-    useCountries();
 
     return (
         <>

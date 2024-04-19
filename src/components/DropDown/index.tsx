@@ -31,7 +31,7 @@ const Dropdown = ({ isOpenProp, title, options }: DropDownProps) => {
           {options.map((option, index) => {
             return (
               <S.DropdownItem key={index} onClick={handleItemClick}>
-                <Link to={'continentes/' + option.slug}>
+                <Link to={'continentes/' + option.slug + '/'+option.name}>
                   {option.name}
                 </Link>
               </S.DropdownItem>

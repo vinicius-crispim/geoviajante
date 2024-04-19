@@ -17,16 +17,18 @@ const CountryPage = () => {
   return (
     <>
       {
-        !country &&
-        <Loader />
-      }
-      {
         country &&
         <section>
           <Title>
             Pais: {country?.name}
           </Title>
-          <CountryInfo country={country} code={params?.code}/>
+          {
+            country.name === undefined &&
+            <Loader />
+          }
+          {country.name !== undefined &&
+            <CountryInfo country={country} code={params?.code} />
+          }
         </section>
       }
     </>

@@ -11,7 +11,7 @@ const Rotas = () => {
       <Route path='/' element={<PaginaBase />}>
         <Route path='/' element={<Home />} />
         <Route path="/pais/:code" element={<CountryPage/>}/> 
-        <Route path="/continentes/:code" element={<ContinentCountries/>}/> 
+        <Route path="/continentes/:code/:name" element={<ContinentCountries/>}/> 
       </Route>
     </Routes>)
 }
