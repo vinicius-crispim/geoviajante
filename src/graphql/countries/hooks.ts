@@ -1,5 +1,5 @@
 import { useQuery, useReactiveVar } from "@apollo/client"
-import { GET_COUNTRIES, GET_COUNTRY_BY_CODE } from "./queries"
+import { GET_COUNTRIES, GET_COUNTRIES_BY_CONTINENT, GET_COUNTRY_BY_CODE } from "./queries"
 import { countriesByContinentVar, countriesVar, countryVar, filtroByContinentVar, filtroVar } from "./state"
 
 const shuffle = (array: any) => {
@@ -35,8 +35,9 @@ export const useCountries = () => {
 
 export const useCountriesByContinent = (continent: string) => {
     const filtro = useReactiveVar(filtroByContinentVar);
+    console.log(continent)
     return (
-        useQuery(GET_COUNTRIES, {
+        useQuery(GET_COUNTRIES_BY_CONTINENT, {
             variables: {
                 name: filtro,
                 continent: continent
