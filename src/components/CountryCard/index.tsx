@@ -10,7 +10,7 @@ interface ICountryCardProps {
 const CountryCard = ({ country }: ICountryCardProps) => {
     return (
         <S.CountryCardStyle >
-            <Link to={'pais/'+country.code}>
+            <Link to={'/pais/'+country.code}>
                 <img
                     src={`https://flagcdn.com/h240/${country.code.toLowerCase()}.png`}
                     alt={country.name}

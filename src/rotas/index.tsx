@@ -3,8 +3,7 @@ import PaginaBase from "../Pages/Base"
 import Home from "../Pages/Home"
 import CountryPage from "../Pages/CountryPage"
 import { ContinentCountries } from "../Pages/ContinentCountries"
-
-
+import NotFound from "../Pages/NotFound"
 
 const Rotas = () => {
     return (<Routes>
@@ -13,6 +12,7 @@ const Rotas = () => {
         <Route path="/pais/:code" element={<CountryPage/>}/> 
         <Route path="/continentes/:code/:name" element={<ContinentCountries/>}/> 
       </Route>
+      <Route path='*' element={<NotFound/>}/>
     </Routes>)
 }
 

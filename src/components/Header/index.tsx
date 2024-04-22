@@ -2,6 +2,7 @@ import { HeaderStyled } from './Header';
 import Logo from '../../images/Logo.png'
 import Dropdown from '../DropDown/index';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -46,7 +47,7 @@ const Header = () => {
     return (
         <HeaderStyled>
             <div className="container container-space">
-                <h1><img src={Logo} alt="Geo Viajante" /></h1>
+                <h1><Link to='/'><img src={Logo} alt="Geo Viajante" /></Link></h1>
                 <nav>
                     <button className="menu-button"
                         onClick={() => {
@@ -63,7 +64,7 @@ const Header = () => {
                             <Dropdown isOpenProp={isOpen} title='Continentes' options={continents} />
                         </li>
                         <li className="menu-item"><a href="#minigame">Minigame</a></li>
-                        <li className="menu-item"><a href="#about">Sobre</a></li>
+                        <li className="menu-item"><Link to="/about">Sobre</Link></li>
                     </ul>
                 </nav>
             </div>
