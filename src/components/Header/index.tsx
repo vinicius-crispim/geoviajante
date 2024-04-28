@@ -64,7 +64,7 @@ const Header = () => {
                             <Dropdown isOpenProp={isOpen} title='Continentes' options={continents} />
                         </li>
                         <li className="menu-item"><a href="#minigame">Minigame</a></li>
-                        <li className="menu-item"><Link to="/about">Sobre</Link></li>
+                        <li className="menu-item"><Link to="/sobre">Sobre</Link></li>
                     </ul>
                 </nav>
             </div>
