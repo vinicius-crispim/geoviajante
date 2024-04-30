@@ -1,4 +1,4 @@
-import { useReactiveVar, makeVar } from '@apollo/client';
+import { useReactiveVar } from '@apollo/client';
 import Banner from "../../components/Banner";
 import CountriesList from '../../components/CountriesList/index';
 import Curiosities from "../../components/Curiosities";

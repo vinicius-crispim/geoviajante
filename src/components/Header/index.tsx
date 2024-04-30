@@ -59,12 +59,13 @@ const Header = () => {
                         <div className='menu-icon'></div>
                     </button>
                     <ul className="menu" id='menu'>
+                    <Link to="/"><li className="menu-item">Início</li></Link>
                         <li className="menu-item dropdown" onClick={handleDropDown}
                             onMouseLeave={closeDropdown}>
                             <Dropdown isOpenProp={isOpen} title='Continentes' options={continents} />
                         </li>
-                        <li className="menu-item"><a href="#minigame">Minigame</a></li>
-                        <li className="menu-item"><Link to="/sobre">Sobre</Link></li>
+                        <Link to="/minigame"><li className="menu-item">Minigame</li></Link>
+                        <Link to="/sobre"><li className="menu-item">Sobre</li></Link>
                     </ul>
                 </nav>
             </div>

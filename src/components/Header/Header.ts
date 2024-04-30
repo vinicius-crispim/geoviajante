@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HeaderStyled = styled.header`
   color: black;
-  padding: 20px 0;
+  padding: 12px 0;
   letter-spacing: 1px;
   .container {
     margin: 0 auto;

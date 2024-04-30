@@ -14,7 +14,7 @@ const About = () => {
                     target="_blank" rel="noreferrer">clicando aqui</a>, já para mostrar as imagens das bandeiras
                     de cada país, foi usada a API de bandeiras criada por <a href="https://flagpedia.net/"
                     target="_blank" rel="noreferrer">Flagpedia.net</a> que pode ser  
-                    vista <a href='https://flagcdn.com/'target="_blank" rel="noreferrer">clicando aqui</a>.
+                    vista <a href='https://flagcdn.com/'target="_blank" rel="noreferrer"> aqui</a>.
                 </p>
                 <p>
                     Atualmente estou buscando minha primeira oportunidade na área para conseguir 
