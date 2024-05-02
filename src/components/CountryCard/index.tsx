@@ -5,18 +5,28 @@ import * as S from './CountryCard'
 
 interface ICountryCardProps {
     country: ICountry;
+    game?: boolean;
 }
 
-const CountryCard = ({ country }: ICountryCardProps) => {
+const CountryCard = ({ country, game }: ICountryCardProps) => {
     return (
         <S.CountryCardStyle >
-            <Link to={'/pais/'+country.code}>
-                <img
-                    src={`https://flagcdn.com/h240/${country.code.toLowerCase()}.png`}
-                    alt={country.name}
-                />
-                <h3>{country.name}</h3>
-            </Link>
+            {
+                !game ?
+                    <Link to={'/pais/' + country.code}>
+                        <img
+                            src={`https://flagcdn.com/h240/${country.code.toLowerCase()}.png`}
+                            alt={country.name}
+                        />
+                        <h3>{country.name}</h3>
+                    </Link> :
+                    <>
+                        <img
+                            src={`https://flagcdn.com/h240/${country.code.toLowerCase()}.png`}
+                            alt={country.name} /><h3>{country.name}
+                        </h3>
+                    </>
+            }
         </S.CountryCardStyle>
     )
 }

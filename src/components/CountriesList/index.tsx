@@ -1,10 +1,8 @@
-import { ReactiveVar, useReactiveVar } from "@apollo/client";
+import { ReactiveVar } from "@apollo/client";
 import { useState } from "react";
 import CountryCard from "../CountryCard";
 import * as S from './CountriesList';
 import { ICountry } from '../../interfaces/ICountry';
-import { countriesVar, filtroVar } from "../../graphql/countries/state";
-import { useCountries } from "../../graphql/countries/hooks";
 import Loader from "../Loader";
 import Button from "../Button";
 
@@ -24,7 +22,6 @@ const CountriesList = ({ countries, makeVar } : CountriesListProps) => {
         countries && setLoaderMsg('Nenhum país encontrado');
         console.log(loaderMsg)
     }
-
 
     return (
         <>
