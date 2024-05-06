@@ -13,7 +13,6 @@ export const MiniGameContainer = styled.div`
         display: inline;
         letter-spacing: 2px;
         font-size: 26px;
-        color: ${Colors.yellow_naples};
         border: 1px solid transparent;
         box-shadow: 0 0 6px rgba(0, 0, 0, .4);
         border-radius: 8px;
@@ -39,4 +38,26 @@ export const MiniGameContainer = styled.div`
     
     }   
 
+    .correctAnswer{
+        background-color: green;
+    }
+
+    .incorrectAnswer{
+        background-color: red;
+    }
+
+    button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 32px auto;
+    }
+    
+    .btnAnswer{
+        display: none;
+    }
+    
+    .show{
+        display: block;
+    }
 `

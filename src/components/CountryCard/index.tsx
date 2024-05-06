@@ -6,9 +6,10 @@ import * as S from './CountryCard'
 interface ICountryCardProps {
     country: ICountry;
     game?: boolean;
+    onClick?: void
 }
 
-const CountryCard = ({ country, game }: ICountryCardProps) => {
+const CountryCard = ({ country, game, onClick }: ICountryCardProps) => {
     return (
         <S.CountryCardStyle >
             {
