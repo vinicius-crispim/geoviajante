@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import { Colors } from "../../style/colors";
 
 export const MiniGameContainer = styled.div`
     margin: 12px auto;
     text-align: center;
-
+    
     p{
-        margin: 20px 0;
+        margin: 8px 20px;
     }
 
     h3{
@@ -22,28 +21,30 @@ export const MiniGameContainer = styled.div`
     }
 
     .title-div{
-        margin: 40px 0;
+        margin: 32px 24px;
     }
     
     ul{
         display: flex;
-        justify-content: space-between;
-        gap: 32px;
+        justify-content: center;
         margin: 20px 0;
         flex-wrap: wrap;
-
+        gap: 0;
         h3{
             display:none;
         }
     
+        li{
+            margin: 16px;
+        }
     }   
 
     .correctAnswer{
-        background-color: green;
+        background-color: rgb(80, 200, 120, .7);
     }
 
     .incorrectAnswer{
-        background-color: red;
+        background-color: rgb(128, 0, 32, .5);
     }
 
     button{
@@ -59,5 +60,14 @@ export const MiniGameContainer = styled.div`
     
     .show{
         display: block;
+    }
+
+    @media (max-width:690px) {
+        
+        ul{
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
     }
 `

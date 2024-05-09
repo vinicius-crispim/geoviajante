@@ -17,26 +17,57 @@ const MiniGame = () => {
 
     const [selectedCountry, setSelectedCountry] = useState<String>();
 
+    const [count, setCount] = useState({
+        correct: 0,
+        incorrect: 0,
+        answered:false
+    });
+
     useEffect(() => {
-        startGame(countries, setSelectedCountry, setGameCountries);
+        startGame(countries, gamecountries, setSelectedCountry, setGameCountries);
     }, [countries])
 
     function getAnswer(name: string) {
-        let answerNoti = document.getElementById('answer')
-
-
-        selectedCountry === name && correctAnswer(answerNoti!);
+        console.log(count.answered)
+        !count.answered && handleAnswer(name);
     }
 
     function correctAnswer(answerNoti: HTMLElement) {
-        document.querySelector('.btnAnswer')!.classList.add('show');
+        setCount({
+            answered: true,
+            correct:count.correct + 1,
+            incorrect: count.incorrect
+        })
+        answerNoti!.classList.remove("incorrectAnswer");
         answerNoti!.classList.add("correctAnswer");
+    }
+    function incorrectAnswer(answerNoti: HTMLElement) {
+        setCount({
+            answered: true,
+            correct:count.correct,
+            incorrect: count.incorrect + 1
+        })
+        document.querySelector('.btnAnswer')!.classList.remove('show');
+        answerNoti!.classList.remove("correctAnswer");
+        answerNoti!.classList.add("incorrectAnswer");
+    }
+
+    function handleAnswer(name: string) {
+        let answerNoti = document.getElementById('answer')
+        selectedCountry === name ? correctAnswer(answerNoti!) : incorrectAnswer(answerNoti!);
+        document.querySelector('.btnAnswer')!.classList.add('show');
     }
 
     function nextQuestion() {
-        startGame(countries, setSelectedCountry, setGameCountries);
+        startGame(countries, gamecountries, setSelectedCountry, setGameCountries);
         document.querySelector('.btnAnswer')!.classList.remove('show')
         document.getElementById('answer')!.classList.remove('correctAnswer')
+        document.getElementById('answer')!.classList.remove('incorrectAnswer')
+        setCount({
+            answered: false,
+            correct:count.correct,
+            incorrect: count.incorrect
+        })
     }
 
     return (
@@ -65,6 +96,8 @@ const MiniGame = () => {
                                 })
                             }
                         </ul>
+                        <p>Acertos: {count.correct}</p>
+                        <p>Erros: {count.incorrect}</p>
                         <div className="btnAnswer">
                             <Button onClick={() => {
                                 nextQuestion()
@@ -81,18 +114,20 @@ const MiniGame = () => {
 
 export default MiniGame;
 
-function startGame(countries: ICountry[], setSelectedCountry: React.Dispatch<React.SetStateAction<String | undefined>>, setGameCountries: React.Dispatch<React.SetStateAction<ICountry[]>>) {
+function startGame(countries: ICountry[], gameCountries: ICountry[], setSelectedCountry: React.Dispatch<React.SetStateAction<String | undefined>>, setGameCountries: React.Dispatch<React.SetStateAction<ICountry[]>>) {
     filtroVar('');
     const newArray: ICountry[] = [];
 
-    if (countries[0]) {
-        for (let start = 0; start < 3; start++) {
-            const randomPosition = Math.floor(Math.random() * (countries.length - start)) + start;
-            newArray.push(countries[randomPosition]);
+    if (countries.length > 3) {
+        while (newArray.length < 3) {
+            const randomIndex = Math.floor(Math.random() * countries.length);
+            const randomItem = countries[randomIndex];
+            if (!newArray.includes(randomItem)) {
+                newArray.push(randomItem);
+            }
         }
         const randomIndex = Math.floor(Math.random() * 3);
         setSelectedCountry(newArray[randomIndex].name);
     }
-
     setGameCountries(newArray);
 }
