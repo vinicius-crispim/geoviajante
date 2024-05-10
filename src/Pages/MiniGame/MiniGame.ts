@@ -21,13 +21,13 @@ export const MiniGameContainer = styled.div`
     }
 
     .title-div{
-        margin: 32px 24px;
+        margin: 28px 24px 20px 24px;
     }
     
     ul{
         display: flex;
         justify-content: center;
-        margin: 20px 0;
+        margin: 8px 0;
         flex-wrap: wrap;
         gap: 0;
         h3{
@@ -35,7 +35,7 @@ export const MiniGameContainer = styled.div`
         }
     
         li{
-            margin: 16px;
+            margin: 16px 24px;
         }
     }   
 
@@ -51,7 +51,7 @@ export const MiniGameContainer = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 32px auto;
+        margin: 20px auto;
     }
     
     .btnAnswer{
@@ -68,6 +68,25 @@ export const MiniGameContainer = styled.div`
             justify-content: center;
             flex-direction: column;
             align-items: center;
+        }
+    }
+`
+
+export const ScoreStyled = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p{
+        margin: 0 24px;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    @media (max-width:400px) {
+        
+        p{
+            margin: 0 8px;
         }
     }
 `

@@ -20,7 +20,7 @@ const MiniGame = () => {
     const [count, setCount] = useState({
         correct: 0,
         incorrect: 0,
-        answered:false
+        answered: false
     });
 
     useEffect(() => {
@@ -35,7 +35,7 @@ const MiniGame = () => {
     function correctAnswer(answerNoti: HTMLElement) {
         setCount({
             answered: true,
-            correct:count.correct + 1,
+            correct: count.correct + 1,
             incorrect: count.incorrect
         })
         answerNoti!.classList.remove("incorrectAnswer");
@@ -44,7 +44,7 @@ const MiniGame = () => {
     function incorrectAnswer(answerNoti: HTMLElement) {
         setCount({
             answered: true,
-            correct:count.correct,
+            correct: count.correct,
             incorrect: count.incorrect + 1
         })
         document.querySelector('.btnAnswer')!.classList.remove('show');
@@ -65,7 +65,7 @@ const MiniGame = () => {
         document.getElementById('answer')!.classList.remove('incorrectAnswer')
         setCount({
             answered: false,
-            correct:count.correct,
+            correct: count.correct,
             incorrect: count.incorrect
         })
     }
@@ -96,8 +96,11 @@ const MiniGame = () => {
                                 })
                             }
                         </ul>
-                        <p>Acertos: {count.correct}</p>
-                        <p>Erros: {count.incorrect}</p>
+                        <S.ScoreStyled>
+                            <p>Total: {count.correct + count.incorrect}</p>
+                            <p>Acertos: {count.correct}</p>
+                            <p>Erros: {count.incorrect}</p>
+                        </S.ScoreStyled>
                         <div className="btnAnswer">
                             <Button onClick={() => {
                                 nextQuestion()
